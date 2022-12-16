@@ -1,0 +1,25 @@
+@layout('layouts/main')
+@set('title',title)
+
+@section('body')
+<p>{{message}}</p>
+<form method="post" action="/sample">
+ <div class="mb-3">
+    <label for="msg" class="form-label">Fill in the message</label>
+    <input type="text" class="form-control" 
+      id="msg" name="msg">
+  </div>
+ 
+  </div>
+  
+  <button type="submit" class="btn btn-secondary">送信</button>
+</form>  
+
+<hr>
+<h5>セッションの内容</h5>
+<ul class="list-group">
+@each(item in list)
+<li class="list-group-item>{{item}}</li>
+@end
+</ul>
+@end
