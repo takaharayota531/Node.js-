@@ -22,6 +22,11 @@ export default class extends BaseSeeder {
           email: 'yoshimura@Aida.com',
           age:23,
         },
+        {
+          name:'shineda',
+          email: 'shineda@Aida.com',
+          age:237892374893278732,
+        }
       ]
     )
   }

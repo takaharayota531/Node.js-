@@ -1,0 +1,39 @@
+@layout('layouts/main')
+@set('title', title)
+
+
+@section('body')
+<p>{{message}}</p>
+<form method="post" action='/person/find'>
+ <div class="mb-3">
+    <label for="find" class="form-label">Find</label>
+    <input type="text" class="form-control" 
+      id="find" name="find" value="{{find}}">
+  </div>
+  
+  
+  <button type="submit" class="btn btn-secondary">送信</button>
+</form>  
+
+<table class="table">
+    <thead>
+      <tr>
+        <th>id</th><th>name</th>
+        <th>email</th><th>age</th>
+        <th>created</th><th>updated</th>
+      </tr>
+    </thead>
+@each(item in data)
+    <tr>
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.age}}</td>
+        <td>{{item.createdAt.toISODate()}}</td>
+        <td>{{item.updatedAt.toISODate()}}</td>
+    </tr>
+@end
+
+</table>
+
+@end 

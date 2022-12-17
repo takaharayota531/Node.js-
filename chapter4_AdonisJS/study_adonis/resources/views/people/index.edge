@@ -1,0 +1,11 @@
+@layout('layouts/main')
+@set('title', title)
+
+@section('body')
+<p>{{message}}</p>
+    <ul class="list-group">
+        @each (item in data)
+            <li class="list-group-item">{{JSON.stringify(item)}}</li>
+        @end
+    </ul>
+@end
